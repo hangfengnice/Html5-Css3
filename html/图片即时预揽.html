@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    文件: <input type="file" name='myfile' id='myfile' onchange="getFileContent();"><br>
+    <input type="submit">
+  </form>
+  <img src="" alt="">
+  <script>
+    function getFileContent(){
+     var reader = new FileReader();
+
+     var file = document.getElementById("myfile").files;
+
+     reader.readAsDataURL(file[0])
+
+     reader.onload = function(){
+       document.querySelector('img').src = reader.result
+     }
+    }
+  </script>
+</body>
+</html>

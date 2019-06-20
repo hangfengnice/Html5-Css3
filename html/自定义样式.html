@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <div id="user" data-id="1234567890" data-user="johndoe" data-date-of-birth>John Doe
+      </div>
+      <script>
+        var el = document.querySelector('#user');
+
+// el.id == 'user'
+// el.dataset.id === '1234567890'
+// el.dataset.user === 'johndoe'
+// el.dataset.dateOfBirth === ''
+
+el.dataset.dateOfBirth = '1960-10-03'; // set the DOB.
+
+// 'someDataAttr' in el.dataset === false
+
+el.dataset.someDataAttr = 'mydata';
+// 'someDataAttr' in el.dataset === true
+      </script>
+
+</body>
+</html>
