@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    div{
+      width: 882px;
+      height: 86px;
+      margin: 100px auto;
+      overflow: hidden;
+
+
+    }
+    div ul {
+      width: 200%;
+      list-style: none;
+      animation-name: move;
+      animation-duration: 7s; 
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+    }
+    div ul li{
+      width: 126px;
+      float: left;
+    }
+    div:hover ul{
+      cursor: pointer;
+      animation-play-state: paused;
+    }
+    div ul li img{
+      width: 126px;
+      height: 126px;
+
+    }
+    @keyframes move {
+      from{
+        transform: translateX(0)
+      }
+      to{
+        transform: translateX(-882px)
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul>
+        <li><img src="../img/jy.jpeg" alt=""></li>
+        <li><img src="../img/jy1.jpeg" alt=""></li>
+        <li><img src="../img/jy2.jpeg" alt=""></li>
+        <li><img src="../img/jy3.jpeg" alt=""></li>
+        <li><img src="../img/jy4.jpeg" alt=""></li>
+        <li><img src="../img/jy5.png" alt=""></li>
+        <li><img src="../img/jy6.jpg" alt=""></li>
+        <li><img src="../img/jy.jpeg" alt=""></li>
+        <li><img src="../img/jy1.jpeg" alt=""></li>
+        <li><img src="../img/jy2.jpeg" alt=""></li>
+        <li><img src="../img/jy3.jpeg" alt=""></li>
+        <li><img src="../img/jy4.jpeg" alt=""></li>
+        <li><img src="../img/jy5.png" alt=""></li>
+        <li><img src="../img/jy6.jpg" alt=""></li>
+    </ul>
+
+
+  </div>
+  
+
+</body>
+</html>
