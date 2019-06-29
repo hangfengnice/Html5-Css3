@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .clock {
+        width: 300px;
+        height: 300px;
+        border: 15px ridge rgb(241, 77, 65);
+        border-radius: 50%;
+        margin: 100px auto;
+        position: relative;
+      }
+      .dotline {
+        position: absolute;
+        width: 6px;
+        height: 286px;
+        left: 50%;
+        top: 7px;
+        transform: translate(-50%, 0);
+      }
+
+      .dotline::before {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #ccc;
+      }
+      .dotline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #ccc;
+        bottom: 0;
+      }
+      .numline {
+        position: absolute;
+        width: 6px;
+        height: 260px;
+        left: 50%;
+        top: 20px;
+        transform: translate(-50%, 0);
+        /* background-color: #000; */
+      }
+      .numline::before {
+        content: "12";
+        position: absolute;
+        width: 6px;
+        left: -2px;
+        height: 6px;
+
+        color: #000;
+      }
+      .numline::after {
+        content: "6";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        color: #000;
+        bottom: 12px;
+        left: -2px;
+      }
+      .line32 {
+        transform: translate(-50%, 0) rotate(30deg);
+      }
+      .line32::before {
+        content: "1";
+      }
+      .line32::after {
+        content: "7";
+        transform: rotate(210deg);
+        bottom: 0;
+      }
+      .line33 {
+        transform: translate(-50%, 0) rotate(60deg);
+      }
+      .line33::before {
+        content: "2";
+      }
+      .line33::after {
+        content: "8";
+        bottom: 12px;
+      }
+       .line34 {
+        transform: translate(-50%, 0) rotate(90deg);
+      }
+      .line34::before {
+        content: "3";
+      }
+      .line34::after {
+        content: "9";
+        left: 2px;
+        transform: rotate(180deg);
+
+        bottom: 2px;
+      }
+      .line35 {
+        transform: translate(-50%, 0) rotate(120deg);
+      }
+      .line35::before {
+        content: "4";
+      }
+      .line35::after {
+        content: "10";
+        left: 2px;
+        transform: rotate(180deg);
+
+        bottom: 2px;
+      }
+      .line36 {
+        transform: translate(-50%, 0) rotate(150deg);
+      }
+      .line36::before {
+        content: "5";
+      }
+      .line36::after {
+        content: "11";
+        left: 2px;
+        transform: rotate(180deg);
+
+        bottom: 2px;
+      }
+      .line7 {
+        transform: translate(-50%, 0) rotate(6deg);
+      }
+      .line8 {
+        transform: translate(-50%, 0) rotate(12deg);
+      }
+      .line9 {
+        transform: translate(-50%, 0) rotate(18deg);
+      }
+      .line10 {
+        transform: translate(-50%, 0) rotate(24deg);
+      }
+      .line11 {
+        transform: translate(-50%, 0) rotate(36deg);
+      }
+      .line12 {
+        transform: translate(-50%, 0) rotate(42deg);
+      }
+      .line13 {
+        transform: translate(-50%, 0) rotate(48deg);
+      }
+      .line14 {
+        transform: translate(-50%, 0) rotate(54deg);
+      }
+      .line15 {
+        transform: translate(-50%, 0) rotate(66deg);
+      }
+      .line16 {
+        transform: translate(-50%, 0) rotate(72deg);
+      }
+
+      .line17 {
+        transform: translate(-50%, 0) rotate(78deg);
+      }
+
+      .line18 {
+        transform: translate(-50%, 0) rotate(84deg);
+      }
+      .line19 {
+        transform: translate(-50%, 0) rotate(96deg);
+      }
+      .line20 {
+        transform: translate(-50%, 0) rotate(102deg);
+      }
+      .line21 {
+        transform: translate(-50%, 0) rotate(108deg);
+      }
+      .line22 {
+        transform: translate(-50%, 0) rotate(114deg);
+      }
+      .line23 {
+        transform: translate(-50%, 0) rotate(126deg);
+      }
+      .line24 {
+        transform: translate(-50%, 0) rotate(132deg);
+      }
+
+      .line25 {
+        transform: translate(-50%, 0) rotate(138deg);
+      }
+      .line26 {
+        transform: translate(-50%, 0) rotate(144deg);
+      }
+      .line27 {
+        transform: translate(-50%, 0) rotate(156deg);
+      }
+      .line28 {
+        transform: translate(-50%, 0) rotate(162deg);
+      }
+      .line29 {
+        transform: translate(-50%, 0) rotate(168deg);
+      }
+      .line30 {
+        transform: translate(-50%, 0) rotate(174deg);
+      }
+
+      .line {
+        width: 8px;
+        height: 300px;
+        background-color: #ccc;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 0);
+      }
+      .lin1,
+      .line4 {
+        width: 10px;
+      }
+      .line2 {
+        transform: translate(-50%, 0) rotate(30deg);
+      }
+      .line3 {
+        transform: translate(-50%, 0) rotate(60deg);
+      }
+      .line4 {
+        transform: translate(-50%, 0) rotate(90deg);
+      }
+      .line5 {
+        transform: translate(-50%, 0) rotate(120deg);
+      }
+      .line6 {
+        transform: translate(-50%, 0) rotate(150deg);
+      }
+      .cover {
+        width: 265px;
+        height: 265px;
+        border-radius: 50%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+      }
+      .hour {
+        width: 6px;
+        height: 70px;
+        background-color: rgb(121, 121, 121);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -100%);
+        transform-origin: center bottom;
+
+        animation: clockAnimation 43200s linear infinite;
+      }
+      .minute {
+        width: 4px;
+        height: 80px;
+        background-color: rgb(121, 121, 121);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -100%);
+        transform-origin: center bottom;
+
+        animation: clockAnimation 3600s linear infinite;
+      }
+      .second {
+        width: 2px;
+        height: 90px;
+        background-color: rgb(191, 115, 98);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -100%);
+        transform-origin: center bottom;
+        animation: clockAnimation 60s steps(60) infinite;
+      }
+      .second::before {
+        content: "";
+        position: absolute;
+        top: -18px;
+        left: -5px;
+        border: 6px solid #fff;
+        border-bottom-width: 12px;
+        border-bottom-color: rgb(191, 115, 98);
+        width: 0;
+        height: 0;
+      }
+      .center {
+        width: 20px;
+        height: 20px;
+        background-color: rgb(191, 115, 98);
+        position: absolute;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .center1 {
+        width: 15px;
+        height: 15px;
+        background-color: #ccc;
+        position: absolute;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .center2 {
+        width: 10px;
+        height: 10px;
+        background-color: rgb(191, 115, 98);
+        position: absolute;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @keyframes clockAnimation {
+        from {
+          transform: translate(-50%, -100%) rotate(0);
+        }
+        to {
+          transform: translate(-50%, -100%) rotate(360deg);
+        }
+      }
+      .btn button{
+        display: block;
+        
+        width: 200px;
+        height: 50px;
+        margin: -60px auto 0;
+
+
+      }
+      .btn a{
+        text-decoration: none;
+        font-size: 18px;
+        color: #fff;
+        background-color: lightgreen;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="line line1"></div>
+      <div class="line line2"></div>
+      <div class="line line3"></div>
+      <div class="line line4"></div>
+      <div class="line line5"></div>
+      <div class="line line6"></div>
+      <div class="dotline line7"></div>
+      <div class="dotline line8"></div>
+      <div class="dotline line9"></div>
+      <div class="dotline line10"></div>
+      <div class="dotline line11"></div>
+      <div class="dotline line12"></div>
+      <div class="dotline line13"></div>
+      <div class="dotline line14"></div>
+      <div class="dotline line15"></div>
+      <div class="dotline line16"></div>
+      <div class="dotline line17"></div>
+      <div class="dotline line18"></div>
+      <div class="dotline line19"></div>
+      <div class="dotline line20"></div>
+      <div class="dotline line21"></div>
+      <div class="dotline line22"></div>
+      <div class="dotline line23"></div>
+      <div class="dotline line24"></div>
+      <div class="dotline line25"></div>
+      <div class="dotline line26"></div>
+      <div class="dotline line27"></div>
+      <div class="dotline line28"></div>
+      <div class="dotline line29"></div>
+      <div class="dotline line30"></div>
+
+      <div class="cover"></div>
+      <div class="numline line31"></div>
+      <div class="numline line32"></div>
+      <div class="numline line33"></div>
+      <div class="numline line34"></div>
+      <div class="numline line35"></div>
+      <div class="numline line36"></div>
+
+      
+
+      <div class="hour"></div>
+      <div class="minute"></div>
+      <div class="second"></div>
+      <div class="center"></div>
+      <div class="center1"></div>
+      <div class="center2"></div>
+
+    </div>
+    <div class='btn'><button><a href="">前往另一个考核题目</a></button></div>
+  </body>
+</html>
