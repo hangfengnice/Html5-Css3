@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      html * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="sec">
+      <style>
+        #sec {
+          background-color: red;
+        }
+        .child {
+          height: 100px;
+          margin-top: 10px;
+          background-color: yellow;
+        }
+      </style>
+
+      <article class="child"></article>
+    </section>
+
+    <section id="margin">
+      <style>
+        #margin{
+          background-color: pink;
+          overflow: hidden;
+        }
+        #margin>p{
+          margin: 5px auto 25px;
+          background-color: red;
+        }
+
+      </style>
+      <P>1</P>
+      <P>2</P>
+      <P>3</P>
+    </section>
+  </body>
+</html>
