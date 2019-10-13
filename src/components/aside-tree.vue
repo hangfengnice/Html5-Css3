@@ -62,6 +62,16 @@ export default {
           id: 3,
           label: "浏览器兼容性小谈",
           path: "/browser"
+        },
+        {
+          id: 4,
+          label: "相似属性的不同点",
+          path: "/different"
+        },
+        {
+          id: 5,
+          label: "所遇问题尚未解决",
+          path: "/problem"
         }
       ],
       defaultProps: {

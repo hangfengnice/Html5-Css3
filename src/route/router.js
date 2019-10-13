@@ -15,5 +15,15 @@ export default [
     path: "/browser",
     name: "browser",
     component: () => import("../views/browser.vue")
+  },
+  {
+    path: "/problem",
+    name: "problem",
+    component: () => import("../views/problem.vue")
+  },
+  {
+    path: "/different",
+    name: "different",
+    component: () => import("../views/different.vue")
   }
 ];
