@@ -1,7 +1,5 @@
 <template>
   <div>
-    <p class='inner-title'>2.1 语法</p>
-
     <p>animation属性 👇</p>
     <el-table :data="tableData" style="width: 100%">
       <el-table-column prop="property" label="属性" width="180"></el-table-column>
@@ -55,8 +53,5 @@ export default {
 </script>
 
 <style scoped>
-.inner-title {
-  font-weight: 600;
-  color: rgb(73, 163, 113);
-}
+
 </style>

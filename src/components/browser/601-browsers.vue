@@ -5,12 +5,12 @@
     style="width: 100%">  <!-- stripe 斑马线 -->
     <el-table-column
       prop="core"
-      label="日期"
+      label="浏览器内核"
       width="180">
     </el-table-column>
     <el-table-column
       prop="main-browser"
-      label="姓名"
+      label="浏览器"
       width="180">
     </el-table-column>
     <el-table-column

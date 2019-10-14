@@ -21,7 +21,7 @@
 
 <script>
 export default {
-   name: "cookie",
+   name: "cookie1",
    data() {
       return {
         tableData: [{

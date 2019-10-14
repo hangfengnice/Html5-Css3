@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-      点击左侧的对应 <strong>标题</strong>,将显示相应的内容
+      心中有猛虎 可细嗅蔷薇
   </div>
 </template>
 
@@ -15,9 +15,7 @@ export default {
 
 <style scoped>
 .home {
-  height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 </style>
