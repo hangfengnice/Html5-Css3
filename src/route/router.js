@@ -27,6 +27,11 @@ export default [
     component: () => import("../views/css/203-animation.vue")
   },
   {
+    path: "/301-debouncethrottle",
+    name: "debouncethrottle",
+    component: () => import("../views/es5/301-debouncethrottle.vue")
+  },
+  {
     path: "/601-browsers",
     name: "browsers",
     component: () => import("../views/browser/601browsers.vue")

@@ -92,8 +92,8 @@ export default {
           label: "ES 5",
           children: [{
             id: 301,
-            label: "",
-            path: "/"
+            label: "debounce throttle",
+            path: "/301-debouncethrottle"
           },{
             id: 302,
             label: "",
